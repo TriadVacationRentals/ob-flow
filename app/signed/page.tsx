@@ -40,9 +40,7 @@ export default function SignedPage() {
 
         <h1 className="signed-title">Contract Signed</h1>
         <p className="signed-desc">
-          {closed
-            ? "You're all set."
-            : "You can close this tab and continue your onboarding."}
+          Please close this screen and continue your onboarding.
         </p>
       </div>
     </div>
