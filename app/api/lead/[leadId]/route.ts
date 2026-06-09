@@ -53,6 +53,7 @@ export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ leadId: string }> }
 ) {
+  try {
   const { leadId } = await params;
 
   const res = await fetch(`https://api.notion.com/v1/pages/${leadId}`, {
@@ -85,4 +86,7 @@ export async function GET(
     paymentLink,
     calendar,
   });
+  } catch (e) {
+    return NextResponse.json({ error: String(e) }, { status: 500 });
+  }
 }
